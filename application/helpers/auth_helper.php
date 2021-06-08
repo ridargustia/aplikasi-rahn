@@ -27,19 +27,6 @@ function is_login_front()
   }
 }
 
-function is_grandadmin()
-{
-  $CI = &get_instance();
-
-  $usertype = $CI->session->usertype_id;
-
-  if ($usertype == '5') {
-    return $usertype;
-  }
-
-  return null;
-}
-
 function is_masteradmin()
 {
   $CI = &get_instance();
@@ -73,19 +60,6 @@ function is_admin()
   $usertype = $CI->session->usertype_id;
 
   if ($usertype == '3') {
-    return $usertype;
-  }
-
-  return null;
-}
-
-function is_pegawai()
-{
-  $CI = &get_instance();
-
-  $usertype = $CI->session->usertype_id;
-
-  if ($usertype == '4') {
     return $usertype;
   }
 
