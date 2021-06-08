@@ -37,12 +37,15 @@
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="<?php echo base_url('assets/images/user/'.$this->session->photo_thumb) ?>" class="img-circle" alt="User Image">
+                <?php if($this->session->photo_thumb == NULL){ ?>
+                  <img src="<?php echo base_url('assets/images/user/noimage.jpg') ?>" class="img-circle" alt="No Image Found">
+                <?php } else{ ?>
+                  <img src="<?php echo base_url('assets/images/user/'.$this->session->photo_thumb) ?>" class="img-circle" alt="User Image">
+                <?php } ?>
                 <p>
                   <?php echo $this->session->username ?> - <?php echo $this->session->usertype_name ?>
                   <br>
                   <small><b>Bergabung:</b> <?php echo date_only($this->session->created_at) ?></small>
-                  <small><b><?php echo $this->session->instansi_name ?> | <?php echo $this->session->cabang_name ?> | <?php echo $this->session->divisi_name ?></b></small>
                 </p>
               </li>
 
