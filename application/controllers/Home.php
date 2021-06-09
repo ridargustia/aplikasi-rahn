@@ -23,16 +23,8 @@ class Home extends CI_Controller
   {
     $this->data['page_title'] = 'Home';
 
-    // $this->data['get_instansi']       = $this->Instansi_model->get_by_id($this->session->instansi_id);
-
-    // if (is_grandadmin()) {
-    //   $this->data['get_all_instansi'] = $this->Instansi_model->get_all_active();
-    // } elseif (is_masteradmin()) {
-    //   $this->data['get_all_cabang']   = $this->Cabang_model->get_all_by_instansi();
-    // } else {
-    //   $this->data['get_all_divisi']   = $this->Divisi_model->get_all_by_cabang();
-    // }
-
+    $this->data['get_deposito'] = $this->Deposito_model->get_by_user();
+    
     $this->load->view('front/home/body', $this->data);
   }
 }
